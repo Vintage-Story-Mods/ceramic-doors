@@ -1,0 +1,11 @@
+{
+  "type": "content",
+  "modid": "ceramicdoors",
+  "name": "Ceramic Doors",
+  "description": "Ceramic Doors in various colors",
+  "version": "1.0.0",
+  "networkversion": null,
+  "authors": [ "Jargonius" ],
+  "side": "Universal",
+  "requiredonclient": true
+}

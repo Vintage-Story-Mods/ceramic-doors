@@ -1,0 +1,172 @@
+{
+    code: "ceramicdoor",
+    class: "BlockGeneric",
+    entityClass: "Generic",
+    "__comment": "Lockable behavior first so that it prevents subsequent Door behavior if it is locked",
+    behaviors: [ 
+        { name: "Lockable" },
+        { name: "Door" }, 
+        { name: "BlockEntityInteract" }
+    ],
+    entityBehaviors: [{ name: "Door" }],
+    variantgroups: [
+        { code: "style", states: ["panel", "1x3gate", "2x2gate", "2x4gate"] },
+        { code: "type", states: ["blue", "brown", "fire", "red"] },
+    ],
+    attributes: {
+        handbook: {
+            groupBy: ["ceramicdoor-{material}-*"]
+        },
+        airtight: true,
+        widthByType: {
+            "ceramicdoor-2x2gate-*": 2,
+            "ceramicdoor-2x4gate-*": 2,
+            "*": 1
+        },
+        heightByType: {
+            "ceramicdoor-1x3gate-*": 3,
+            "ceramicdoor-2x4gate-*": 4,
+            "*": 2
+        },
+        openSoundByType: {
+            "ceramicdoor-1x3gate-*": "game:sounds/block/vesselopen",
+            "ceramicdoor-2x4gate-*": "game:sounds/block/vesselopen",
+            "ceramicdoor-2x2gate-*": "game:sounds/block/vesselopen",
+            "*": "game:sounds/block/vesselopen"
+        },
+        closeSoundByType: {
+            "ceramicdoor-1x3gate-*": "game:sounds/block/vesselclose",
+            "ceramicdoor-2x4gate-*": "game:sounds/block/vesselclose",
+            "ceramicdoor-2x2gate-*": "game:sounds/block/vesselclose",
+            "*": "game:sounds/block/vesselclose"
+        },
+        easingSpeedByType: {
+            "ceramicdoor-1x3gate-*": 3,
+            "ceramicdoor-2x2gate-*": 2,
+            "ceramicdoor-2x4gate-*": 1,
+
+            "*": 10
+        }
+    },
+    creativeinventoryByType: {
+        "*": { "general": ["*"], "decorative": ["*"] },
+    },
+    shape: { base: "block/ceramic/door/{style}" },
+    texturesByType: {
+        "ceramicdoor-panel-*": {
+            "wood": { base: "game:block/clay/hardened/{type}1", rotation: 90, blendedOverlays: [{ base: "block/ceramic/door/overlay-panel", blendMode: "Overlay" }] }
+        },
+        "ceramicdoor-1x3gate-*": {
+            "wood": { base: "game:block/clay/hardened/{type}1", rotation: 90, blendedOverlays: [{ base: "game:block/wood/door/overlay-tall", blendMode: "Overlay" }] }
+        },
+        "ceramicdoor-2x2gate-*": {
+            "wood": { base: "game:block/clay/hardened/{type}1", rotation: 90, blendedOverlays: [{ base: "game:block/wood/door/overlay-wide", blendMode: "Overlay" }] }
+        },
+        "ceramicdoor-2x4gate-*": {
+            "wood": { base: "game:block/clay/hardened/{type}1", rotation: 90 }
+        }
+    },
+    "__comment": "Needs to be no cull pass because for double doors we flip x coords, but indices don't change so i believe that inverts the winding order, making the graphics card believe the face is facing the other direction",
+    renderPass: "OpaqueNoCull",
+    faceCullMode: "NeverCull",
+    blockmaterial: "Ceramic",
+    sideAo: { all: false },
+    heldTpIdleAnimation: "holdunderarm",
+    replaceable: 700,
+    resistance: 2,
+    lightAbsorption: 99,
+    sidesolid: {
+        all: false
+    },
+    sideopaque: {
+        all: false
+    },
+    guiTransformByType: {
+        "ceramicdoor-2x2gate-*": {
+            origin: { x: 1, y: 1, z: 1 },
+            scale: 0.93
+        },
+        "ceramicdoor-2x4gate-*": {
+            origin: { x: 1, y: 2, z: 1 },
+            scale: 0.73
+        },
+        "ceramicdoor-1x3gate-*": {
+            origin: { x: 0.5, y: 1.5, z: 1 },
+            scale: 0.73
+        },
+        "*": {
+            origin: { x: 0.49, y: 1, z: 0.8 },
+            scale: 0.73
+        },
+    },
+    fpHandTransform: {
+        translation: { x: -0.77, y: 0.18, z: 0.72 },
+        rotation: { x: 98, y: 42, z: 0 },
+        origin: { x: 0.5, y: 0.7, z: 1 },
+        scale: 1.11
+    },
+    tpHandTransformByType: {
+        "ceramicdoor-2x2gate-*": {
+            translation: { x: -0.94, y: -1.42, z: -1.4 },
+            rotation: { x: 13, y: 11, z: 59 },
+            origin: { x: 1, y: 1, z: 1 },
+            scale: 0.71
+        },
+        "ceramicdoor-2x4gate-*": {
+            translation: { x: -0.84, y: -2.81, z: -1.46 },
+            rotation: { x: 12, y: 11, z: 59 },
+            origin: { x: 1, y: 2, z: 1 },
+            scale: 0.71
+        },
+        "ceramicdoor-1x3gate-*": {
+            translation: { x: -0.44, y: -1.82, z: -1.3 },
+            rotation: { x: 8, y: 11, z: 59 },
+            origin: { x: 0.5, y: 1.5, z: 1 },
+            scale: 0.71
+        },
+        "*": {
+            translation: { x: -0.74, y: -1.22, z: -1.3 },
+            rotation: { x: 8, y: 11, z: 59 },
+            origin: { x: 0.5, y: 1, z: 1 },
+            scale: 0.71
+        }
+    },
+    groundTransformByType: {
+        "ceramicdoor-2x2gate-*": {
+            translation: { x: 0, y: 0, z: 0 },
+            rotation: { x: -90, y: 0, z: 0 },
+            origin: { x: 1, y: 1, z: 0.85 },
+            scale: 3
+        },
+        "ceramicdoor-2x4gate-*": {
+            translation: { x: 0, y: 0, z: 0 },
+            rotation: { x: -90, y: 0, z: 0 },
+            origin: { x: 1, y: 2, z: 0.85 },
+            scale: 3
+        },
+        "ceramicdoor-1x3gate-*": {
+            translation: { x: 0, y: 0, z: 0 },
+            rotation: { x: -90, y: 0, z: 0 },
+            origin: { x: 0.5, y: 1.5, z: 0.85 },
+            scale: 3
+        },
+        "*": {
+            translation: { x: 0, y: 0, z: 0 },
+            rotation: { x: -90, y: 0, z: 0 },
+            origin: { x: 0.5, y: 1, z: 0.85 },
+            scale: 3
+        }
+    },
+    selectionbox: { 
+        x1: 0, y1: 0, z1: 0.875, x2: 1, y2: 1, z2: 1
+    },
+    collisionbox: { 
+        x1: 0, y1: 0, z1: 0.875, x2: 1, y2: 1, z2: 1
+    },
+    sounds: {
+        break: "game:block/ceramicplace",
+        hit: "game:block/ceramichit",
+        place: "game:block/ceramicplace",
+        walk: "game:walk/stone"
+    }
+}
