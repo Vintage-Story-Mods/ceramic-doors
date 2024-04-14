@@ -1,5 +1,5 @@
 {
-    code: "ceramicdoor",
+    code: "door-ceramic",
     class: "BlockGeneric",
     entityClass: "Generic",
     "__comment": "Lockable behavior first so that it prevents subsequent Door behavior if it is locked",
@@ -15,35 +15,35 @@
     ],
     attributes: {
         handbook: {
-            groupBy: ["ceramicdoor-{material}-*"]
+            groupBy: ["door-ceramic-{material}-*"]
         },
         airtight: true,
         widthByType: {
-            "ceramicdoor-2x2gate-*": 2,
-            "ceramicdoor-2x4gate-*": 2,
+            "door-ceramic-2x2gate-*": 2,
+            "door-ceramic-2x4gate-*": 2,
             "*": 1
         },
         heightByType: {
-            "ceramicdoor-1x3gate-*": 3,
-            "ceramicdoor-2x4gate-*": 4,
+            "door-ceramic-1x3gate-*": 3,
+            "door-ceramic-2x4gate-*": 4,
             "*": 2
         },
         openSoundByType: {
-            "ceramicdoor-1x3gate-*": "game:sounds/block/vesselopen",
-            "ceramicdoor-2x4gate-*": "game:sounds/block/vesselopen",
-            "ceramicdoor-2x2gate-*": "game:sounds/block/vesselopen",
+            "door-ceramic-1x3gate-*": "game:sounds/block/vesselopen",
+            "door-ceramic-2x4gate-*": "game:sounds/block/vesselopen",
+            "door-ceramic-2x2gate-*": "game:sounds/block/vesselopen",
             "*": "game:sounds/block/vesselopen"
         },
         closeSoundByType: {
-            "ceramicdoor-1x3gate-*": "game:sounds/block/vesselclose",
-            "ceramicdoor-2x4gate-*": "game:sounds/block/vesselclose",
-            "ceramicdoor-2x2gate-*": "game:sounds/block/vesselclose",
+            "door-ceramic-1x3gate-*": "game:sounds/block/vesselclose",
+            "door-ceramic-2x4gate-*": "game:sounds/block/vesselclose",
+            "door-ceramic-2x2gate-*": "game:sounds/block/vesselclose",
             "*": "game:sounds/block/vesselclose"
         },
         easingSpeedByType: {
-            "ceramicdoor-1x3gate-*": 3,
-            "ceramicdoor-2x2gate-*": 2,
-            "ceramicdoor-2x4gate-*": 1,
+            "door-ceramic-1x3gate-*": 3,
+            "door-ceramic-2x2gate-*": 2,
+            "door-ceramic-2x4gate-*": 1,
 
             "*": 10
         }
@@ -53,17 +53,21 @@
     },
     shape: { base: "block/ceramic/door/{style}" },
     texturesByType: {
-        "ceramicdoor-panel-*": {
-            "wood": { base: "game:block/clay/hardened/{type}1", rotation: 90, blendedOverlays: [{ base: "block/ceramic/door/overlay-panel", blendMode: "Overlay" }] }
+        "door-ceramic-panel-*": {
+            "ceramic": {
+                base: "game:block/clay/hardened/{type}1",
+                alternates: [{ base: "game:block/clay/hardened/{type}2" }, { base: "game:block/clay/hardened/{type}3" }],
+                blendedOverlays: [{ base: "block/ceramic/door/overlay-panel", blendMode: "Overlay" }],
+            }
         },
-        "ceramicdoor-1x3gate-*": {
-            "wood": { base: "game:block/clay/hardened/{type}1", rotation: 90, blendedOverlays: [{ base: "game:block/wood/door/overlay-tall", blendMode: "Overlay" }] }
+        "door-ceramic-1x3gate-*": {
+            "ceramic": { base: "game:block/clay/hardened/{type}1", blendedOverlays: [{ base: "game:block/wood/door/overlay-tall", blendMode: "Overlay" }] }
         },
-        "ceramicdoor-2x2gate-*": {
-            "wood": { base: "game:block/clay/hardened/{type}1", rotation: 90, blendedOverlays: [{ base: "game:block/wood/door/overlay-wide", blendMode: "Overlay" }] }
+        "door-ceramic-2x2gate-*": {
+            "ceramic": { base: "game:block/clay/hardened/{type}1", blendedOverlays: [{ base: "game:block/wood/door/overlay-wide", blendMode: "Overlay" }] }
         },
-        "ceramicdoor-2x4gate-*": {
-            "wood": { base: "game:block/clay/hardened/{type}1", rotation: 90 }
+        "door-ceramic-2x4gate-*": {
+            "ceramic": { base: "game:block/clay/hardened/{type}1" }
         }
     },
     "__comment": "Needs to be no cull pass because for double doors we flip x coords, but indices don't change so i believe that inverts the winding order, making the graphics card believe the face is facing the other direction",
@@ -82,15 +86,15 @@
         all: false
     },
     guiTransformByType: {
-        "ceramicdoor-2x2gate-*": {
+        "door-ceramic-2x2gate-*": {
             origin: { x: 1, y: 1, z: 1 },
             scale: 0.93
         },
-        "ceramicdoor-2x4gate-*": {
+        "door-ceramic-2x4gate-*": {
             origin: { x: 1, y: 2, z: 1 },
             scale: 0.73
         },
-        "ceramicdoor-1x3gate-*": {
+        "door-ceramic-1x3gate-*": {
             origin: { x: 0.5, y: 1.5, z: 1 },
             scale: 0.73
         },
@@ -106,19 +110,19 @@
         scale: 1.11
     },
     tpHandTransformByType: {
-        "ceramicdoor-2x2gate-*": {
+        "door-ceramic-2x2gate-*": {
             translation: { x: -0.94, y: -1.42, z: -1.4 },
             rotation: { x: 13, y: 11, z: 59 },
             origin: { x: 1, y: 1, z: 1 },
             scale: 0.71
         },
-        "ceramicdoor-2x4gate-*": {
+        "door-ceramic-2x4gate-*": {
             translation: { x: -0.84, y: -2.81, z: -1.46 },
             rotation: { x: 12, y: 11, z: 59 },
             origin: { x: 1, y: 2, z: 1 },
             scale: 0.71
         },
-        "ceramicdoor-1x3gate-*": {
+        "door-ceramic-1x3gate-*": {
             translation: { x: -0.44, y: -1.82, z: -1.3 },
             rotation: { x: 8, y: 11, z: 59 },
             origin: { x: 0.5, y: 1.5, z: 1 },
@@ -132,19 +136,19 @@
         }
     },
     groundTransformByType: {
-        "ceramicdoor-2x2gate-*": {
+        "door-ceramic-2x2gate-*": {
             translation: { x: 0, y: 0, z: 0 },
             rotation: { x: -90, y: 0, z: 0 },
             origin: { x: 1, y: 1, z: 0.85 },
             scale: 3
         },
-        "ceramicdoor-2x4gate-*": {
+        "door-ceramic-2x4gate-*": {
             translation: { x: 0, y: 0, z: 0 },
             rotation: { x: -90, y: 0, z: 0 },
             origin: { x: 1, y: 2, z: 0.85 },
             scale: 3
         },
-        "ceramicdoor-1x3gate-*": {
+        "door-ceramic-1x3gate-*": {
             translation: { x: 0, y: 0, z: 0 },
             rotation: { x: -90, y: 0, z: 0 },
             origin: { x: 0.5, y: 1.5, z: 0.85 },
