@@ -12,7 +12,12 @@
 	maxStackSize: 8,
 	texturesByType: {
 		"*-raw-*": { "ceramic": { base: "game:block/clay/{type}clay" } },
-		"*-burned-*": { "ceramic": { base: "game:block/clay/hardened/{type}1" } }
+		"*-burned-*": {
+			"ceramic": {
+				base: "game:block/clay/hardened/{type}1",
+				blendedOverlays: [{ base: "block/ceramic/door/overlay-panel", blendMode: "Overlay" }],
+			}
+		}
 	},
 	shape: { base: "item/resource/panel" },
 	behaviorsByType: {
