@@ -61,13 +61,22 @@
             }
         },
         "door-ceramic-1x3gate-*": {
-            "ceramic": { base: "game:block/clay/hardened/{type}1", blendedOverlays: [{ base: "game:block/wood/door/overlay-tall", blendMode: "Overlay" }] }
+            "ceramic": {
+                base: "game:block/clay/hardened/{type}1",
+                blendedOverlays: [{ base: "block/ceramic/door/overlay-panel", blendMode: "Overlay" }],
+            }
         },
         "door-ceramic-2x2gate-*": {
-            "ceramic": { base: "game:block/clay/hardened/{type}1", blendedOverlays: [{ base: "game:block/wood/door/overlay-wide", blendMode: "Overlay" }] }
+            "ceramic": {
+                base: "game:block/clay/hardened/{type}1",
+                blendedOverlays: [{ base: "block/ceramic/door/overlay-panel", blendMode: "Overlay" }],
+            }
         },
         "door-ceramic-2x4gate-*": {
-            "ceramic": { base: "game:block/clay/hardened/{type}1" }
+            "ceramic": {
+                base: "game:block/clay/hardened/{type}1",
+                blendedOverlays: [{ base: "block/ceramic/door/overlay-panel", blendMode: "Overlay" }],
+            }
         }
     },
     "__comment": "Needs to be no cull pass because for double doors we flip x coords, but indices don't change so i believe that inverts the winding order, making the graphics card believe the face is facing the other direction",

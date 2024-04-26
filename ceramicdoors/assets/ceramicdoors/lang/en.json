@@ -1,23 +1,29 @@
 {
-	"block-ceramicdoor-sleek-paneled-*": "Ceramic door",
+	"block-door-ceramic-sleek-paneled-*": "Ceramic door",
+
+	"block-door-ceramic-panel-blue": "Ceramic door (blue)",
+	"block-door-ceramic-1x3gate-blue": "3-tall ceramic door (blue)",
+	"block-door-ceramic-2x2gate-blue": "2 by 2 ceramic gate (blue)",
+	"block-door-ceramic-2x4gate-blue": "2 by 4 ceramic gate (blue)",
+	"item-panel-raw-blue": "Raw blue clay panel",
+	"item-panel-burned-blue": "Fired blue clay panel",
 	
-	"block-ceramicdoor-solid-blue": "Ceramic door (blue)",
-	"block-ceramicdoor-1x3gate-blue": "3-tall ceramic door (blue)",
-	"block-ceramicdoor-2x2gate-blue": "2 by 2 ceramic gate (blue)",
-	"block-ceramicdoor-2x4gate-blue": "2 by 4 ceramic gate (blue)",
+	"block-door-ceramic-panel-brown": "Ceramic door (brown)",
+	"block-door-ceramic-1x3gate-brown": "3-tall ceramic door (brown)",
+	"block-door-ceramic-2x2gate-brown": "2 by 2 ceramic gate (brown)",
+	"block-door-ceramic-2x4gate-brown": "2 by 4 ceramic gate (brown)",
+	"item-panel-burned-brown": "Fired brown clay panel",
 	
-	"block-ceramicdoor-solid-brown": "Ceramic door (brown)",
-	"block-ceramicdoor-1x3gate-brown": "3-tall ceramic door (brown)",
-	"block-ceramicdoor-2x2gate-brown": "2 by 2 ceramic gate (brown)",
-	"block-ceramicdoor-2x4gate-brown": "2 by 4 ceramic gate (brown)",
-	
-	"block-ceramicdoor-solid-fire": "Ceramic door (fire)",
-	"block-ceramicdoor-1x3gate-fire": "3-tall ceramic door (fire)",
-	"block-ceramicdoor-2x2gate-fire": "2 by 2 ceramic gate (fire)",
-	"block-ceramicdoor-2x4gate-fire": "2 by 4 ceramic gate (fire)",
-	
-	"block-ceramicdoor-solid-red": "Ceramic door (red)",
-	"block-ceramicdoor-1x3gate-red": "3-tall ceramic door (red)",
-	"block-ceramicdoor-2x2gate-red": "2 by 2 ceramic gate (red)",
-	"block-ceramicdoor-2x4gate-red": "2 by 4 ceramic gate (red)",
+	"block-door-ceramic-panel-fire": "Ceramic door (fire)",
+	"block-door-ceramic-1x3gate-fire": "3-tall ceramic door (fire)",
+	"block-door-ceramic-2x2gate-fire": "2 by 2 ceramic gate (fire)",
+	"block-door-ceramic-2x4gate-fire": "2 by 4 ceramic gate (fire)",
+	"item-panel-raw-fire": "Raw fire clay panel",
+	"item-panel-burned-fire": "Fired fire clay panel",
+
+	"block-door-ceramic-panel-red": "Ceramic door (red)",
+	"block-door-ceramic-1x3gate-red": "3-tall ceramic door (red)",
+	"block-door-ceramic-2x2gate-red": "2 by 2 ceramic gate (red)",
+	"block-door-ceramic-2x4gate-red": "2 by 4 ceramic gate (red)",
+	"item-panel-burned-red": "Fired red clay panel",
 }

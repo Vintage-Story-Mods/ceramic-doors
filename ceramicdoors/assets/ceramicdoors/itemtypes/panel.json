@@ -31,7 +31,7 @@
 			meltingDuration: 45,
 			smeltedRatio: 1,
 			smeltingType: "fire",
-			smeltedStack: { type: "item", code: "panel-burned" },
+			smeltedStack: { type: "item", code: "panel-burned-{type}" },
 			requiresContainer: false
 		}
 	},
