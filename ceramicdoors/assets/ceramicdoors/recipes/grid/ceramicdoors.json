@@ -1,0 +1,46 @@
+[
+	{
+		name: "Ceramic door",
+		ingredientPattern: "P,M,P",
+		ingredients: {
+			"P": { type: "item", code: "panel-burned-*", name: "type" },
+			"M": { type: "item", code: "game:mortar" },
+		},
+		width: 1,
+		height: 3,
+		output: { type: "block", code: "door-ceramic-panel-{type}"  }
+	},
+	{
+		name: "1x3 gate",
+		ingredientPattern: "P_,PM,P_",
+		ingredients: {
+			"P": { type: "item", code: "panel-burned-*", name: "type" },
+			"M": { type: "item", code: "game:mortar" },
+		},
+		width: 2,
+		height: 3,
+		output: { type: "block", code: "door-ceramic-1x3gate-{type}"  }
+	},
+	{
+		name: "2x2 gate",
+		ingredientPattern: "P_P,_M_,P_P",
+		ingredients: {
+			"P": { type: "item", code: "panel-burned-*", name: "type" },
+			"M": { type: "item", code: "game:mortar" },
+		},
+		width: 3,
+		height: 3,
+		output: { type: "block", code: "door-ceramic-2x2gate-{type}"  }
+	},
+	{
+		name: "2x4 gate",
+		ingredientPattern: "P_P,_M_,P_P",
+		ingredients: {
+			"P": { type: "item", code: "panel-burned-*", name: "type", quantity: 2 },
+			"M": { type: "item", code: "game:mortar" },
+		},
+		width: 3,
+		height: 3,
+		output: { type: "block", code: "door-ceramic-2x4gate-{type}"  }
+	},
+]
